@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cheese-web-deployment
+  namespace: xyz-cheese
+  labels:
+    app: cheese-web
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: cheese-web
+      labels:
+        app: cheese-web
+    spec:
+      containers:
+        - name: cheese-web
+          image: psawesome/cheese-web:elastic-v22
+          imagePullPolicy: Always
+          resources:
+            limits:
+              cpu: 500m
+              memory: 2500Mi
+            requests:
+              cpu: 100m
+              memory: 500Mi
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: cheese-web
