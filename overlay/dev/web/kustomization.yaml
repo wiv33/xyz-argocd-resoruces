@@ -1,0 +1,11 @@
+resources:
+  - deployment-patch.yaml
+  - external-patch.yaml
+
+namespace: dev-xyz-cheese
+commonLabels:
+  env: dev
+buildMetadata:
+  - managedByLabel
+patchesStrategicMerge:
+  - deployment-patch.yaml
