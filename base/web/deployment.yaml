@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: cheese-web
-          image: psawesome/cheese-web:elastic-v22
+          image: psawesome/cheese-web:latest
           imagePullPolicy: Always
           resources:
             limits:
